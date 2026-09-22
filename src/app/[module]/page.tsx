@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Kicker from "@/components/kicker";
 import { MODULES } from "@/components/module-card";
+import { TUTORIALS } from "@/lib/tutorials";
 
 const COPY: Record<string, { subhead: string; steps: { title: string; body: string }[] }> = {
   leave: {
@@ -48,6 +49,7 @@ export default async function ModulePage({
   const copy = COPY[slug];
 
   const otherModules = MODULES.filter((m) => m.slug !== slug);
+  const moduleTutorials = TUTORIALS.filter((t) => t.module === slug);
 
   return (
     <>
@@ -108,6 +110,33 @@ export default async function ModulePage({
           </div>
         </div>
       </section>
+
+      {moduleTutorials.length > 0 && (
+        <section className="border-b border-line bg-card">
+          <div className="mx-auto max-w-6xl px-5 py-20">
+            <Kicker>{mod.name} TUTORIALS</Kicker>
+            <div className="mt-8 space-y-3">
+              {moduleTutorials.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/tutorials/${t.slug}`}
+                  className="flex flex-col gap-2 border border-line bg-paper p-5 transition-colors hover:border-ink sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <div className="mb-1 text-[10px] text-muted">
+                      {t.difficulty} · {t.time}
+                    </div>
+                    <div className="font-display text-lg">{t.title}</div>
+                  </div>
+                  <span className="shrink-0 text-[11px] text-muted">
+                    {t.steps.length} STEPS &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="on-dark bg-dark text-paper">
         <div className="mx-auto max-w-6xl px-5 py-20">
