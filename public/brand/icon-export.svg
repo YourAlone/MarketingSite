@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Export">
+  <rect width="64" height="64" fill="#16150f"/>
+  <path d="M20 30 H36 L32 44 H24 Z" fill="#f0efe6"/>
+  <path d="M26 32 L46 14" stroke="#d3491f" stroke-width="6" stroke-linecap="square"/>
+  <path d="M32 14 H48 V30" fill="none" stroke="#d3491f" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

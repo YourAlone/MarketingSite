@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV = [
   { href: "/#tools", label: "TOOLS" },
@@ -12,9 +13,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-7 w-7 items-center justify-center bg-ink text-paper text-[11px] font-bold">
-            YA
-          </span>
+          <Image src="/brand/logo-mark.svg" alt="" width={28} height={28} />
           <span className="flex flex-col leading-none">
             <span className="font-display text-sm tracking-wide">YOURALONE</span>
             <span className="text-[10px] text-muted">NON-PROFIT / REV 0.1</span>

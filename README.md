@@ -1,4 +1,8 @@
+<img src="public/brand/logo-mark.svg" width="48" height="48" alt="" align="left" />
+
 # YOURALONE — marketing site
+
+<br clear="left"/>
 
 Marketing site for **YOURALONE**, a non-profit that helps people bring their
 data home: export it intact from the platforms that hold it (**Leave**), run
@@ -21,6 +25,8 @@ telemetry panels, and a single red-orange accent against near-black sections.
 - `/leave`, `/land`, `/live` — module detail pages (`src/app/[module]/page.tsx`)
 - `/start` — module picker / entry point
 - `src/components/` — shared pieces (header, footer, module cards, telemetry panel, miss-picker)
+- `public/brand/` — the YOURALONE mark (`logo-mark.svg`) and matching module icons; the same
+  files are reused in [Leave](https://github.com/YourAlone/Leave)'s webUI, exported zip, and README
 
 ## Development
 
